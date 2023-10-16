@@ -1,7 +1,8 @@
 function fetchBooks() {
   fetch("https://anapioficeandfire.com/api/books")
-  .then((resp) => resp.json())
-  .then((json) => console.log(json));
+    .then((resp) => resp.json())
+    .then((json) => renderBooks(json))
+    .catch((error) => console.error("Error fetching books:", error)); 
 }
 
 function renderBooks(books) {
